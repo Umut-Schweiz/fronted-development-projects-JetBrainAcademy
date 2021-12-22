@@ -1,46 +1,69 @@
 
-let upperCaseButton = document.getElementById("upper-case");
-let lowerCaseButton = document.getElementById("lower-case");
-let properCaseButton = document.getElementById("proper-case");
-let sentenceCaseButton = document.getElementById("sentence-case");
-let saveTextFileButton = document.getElementById("save-text-file");
+const upperCaseButton = document.getElementById("upper-case");
+const lowerCaseButton = document.getElementById("lower-case");
+const properCaseButton = document.getElementById("proper-case");
+const sentenceCaseButton = document.getElementById("sentence-case");
+const saveTextFileButton = document.getElementById("save-text-file");
+const textWords = document.querySelector("#text");
 
-let textWords;
+let newTextWords;
 
-const firstLetterToUpper = (txt) => {
+const getTextByArrayWithLowerCase = () => {
+    newTextWords = textWords.value.toLowerCase().trim().split(' ');// creating an array all word after space
+}
+
+const toUpperFirstLetterOfString = (txt) => {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 }
 
-upperCaseButton.addEventListener("click", function () {
-    textWords = document.getElementById("text").value.toUpperCase().trim().split(' ');
-    document.getElementById("text").value = textWords.join(' ');
+const upperCaseAllText = () => {
+    newTextWords = textWords.value.toUpperCase().trim().split(' '); 
+    textWords.value = newTextWords.join(' '); // this join() method creates and returns a new string by concatenating all of the elements in an array
+}
 
-})
+const lowerCaseAllText = () => {
+    getTextByArrayWithLowerCase()
+    textWords.value = newTextWords.join(' ');
+}
 
-lowerCaseButton.addEventListener("click", function () {
-    textWords = document.getElementById("text").value.toLowerCase().trim().split(' ');
-    document.getElementById("text").value = textWords.join(' ');
-})
+const properCaseAllText = () => {
 
-properCaseButton.addEventListener("click", function () {
-    textWords = document.getElementById("text").value.toLowerCase().trim().split(' ');
+    getTextByArrayWithLowerCase()
 
-    for (let i = 0; i < textWords.length; i++) {
-        textWords[i] = firstLetterToUpper(textWords[i]);
+    for (let i = 0; i < newTextWords.length; i++) {
+        newTextWords[i] = toUpperFirstLetterOfString(newTextWords[i]);
     }
 
-    document.getElementById("text").value = textWords.join(' ');
-})
+    textWords.value = newTextWords.join(' ');
+}
 
-sentenceCaseButton.addEventListener("click", function () {
-    textWords = document.getElementById("text").value.toLowerCase().trim().split('. ');
+const sentenceCaseAllText = () => {
 
-    for (let i = 0; i < textWords.length; i++) {
-        textWords[i] = firstLetterToUpper(textWords[i]);
+    newTextWords = textWords.value.toLowerCase().trim().split('. ');
+
+    for (let i = 0; i < newTextWords.length; i++) {
+        newTextWords[i] = toUpperFirstLetterOfString(newTextWords[i]);
     }
 
-    document.getElementById("text").value = textWords.join('. ');
+    textWords.value = newTextWords.join('. ');
+}
+
+upperCaseButton.addEventListener("click", upperCaseAllText)
+lowerCaseButton.addEventListener("click", lowerCaseAllText)
+properCaseButton.addEventListener("click", properCaseAllText)
+sentenceCaseButton.addEventListener("click", sentenceCaseAllText)
+
+
+saveTextFileButton.addEventListener("click", function () {
+
+    newTextWords = textWords.value;
+    console.log(newTextWords)
+
+    // Start file download.
+    download("text.txt", newTextWords);
+
 })
+
 
 function download(filename, text) {
     let element = document.createElement('a');
@@ -55,13 +78,5 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
 
-saveTextFileButton.addEventListener("click", function () {
 
-    textWords = document.getElementById("text").value;
-    console.log(textWords)
-
-    // Start file download.
-    download("text.txt", textWords);
-
-})
 

@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#text {
+    font-family:"Times New Roman", Times, serif;  
+    font-size: 20px; 
+    border: 5px solid black;
+    overflow: auto;
+    background:rgb(236, 248, 248);
+    font-family:sans-serif;
+    outline: auto;
+    min-height:600px;
+    max-height:800px;
+    resize: both;
+    min-width: 750px;
+    max-width:900px;
+    
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .button {
+      border: 2px solid black;
+    border-radius: 10%;
+    font-size: large;
+    background-color: #FFA07A;
+    font-weight: bolder;
+ }
