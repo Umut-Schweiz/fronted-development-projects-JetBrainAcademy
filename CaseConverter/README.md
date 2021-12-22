@@ -1,4 +1,5 @@
 # fronted-development-projects-JetBrainAcademy
+# CaseConverter
 
 Objectives
 Your web page should contain all elements from the previous stage.
