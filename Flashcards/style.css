@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Roboto:wght@100&display=swap");
+
+* {
+  font-family: "Barlow", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-image: url(./world.png);
+}
+
+#game-area {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 700px;
+}
+
+h1 {
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  perspective: 1000px;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  transition: all 0.75s linear;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.front {
+  background-color: #f9efe5;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.front > p {
+  color: #f07504;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.back {
+  background-color: #f07504;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.back > p {
+  color: #f9efe5;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
