@@ -1,0 +1,88 @@
+* {
+    box-sizing: content-box;  
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    font-size: 40px;
+    margin-top: 100px;
+  }
+  
+  body.light {
+    background-color: #fff;
+    color: #19202c;
+  }
+  
+  body.dark {
+    background-color: #19202c;
+    color: #fff;
+  }
+  
+  /* If checkbox is checked the task name should be crossed out.*/
+  #task-list input:checked ~ .task {
+    text-decoration: line-through;
+    text-decoration-color: crimson;
+  }
+  
+  li {
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  li:hover,
+  .check {
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: deepskyblue;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 25px;
+    height: 45px;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  span {
+    padding: 5px;
+    margin: 5px 25px;
+    flex-grow: 1;
+  }
+  
+  input[type="checkbox"] {
+    height: 40px;
+    width: 40px;
+  }
+  
+  #input-task {
+    height: 40px;
+    width: 470px;
+    font-size: 20px;
+    padding: 5px 50px;
+  }
+  
+  
+  #add-task-button,
+  .button-theme {
+    margin: 5px;
+  }
+  
+  .delete-btn {
+    background-color: crimson;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .clear:hover {
+    background-color: crimson;
+  }
+  
+  #add-task-button:hover {
+    box-shadow: 5px 5px 10px rgb(195, 195, 202), 10px 30px 45px rgb(17, 17, 17) inset;
+  }
