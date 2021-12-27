@@ -1,7 +1,9 @@
 # fronted-development-projects-JetBrainAcademy
-# Flashcards
+# ToDo List
 
 
-![st3](https://user-images.githubusercontent.com/69093672/147308329-29ae093e-33aa-442f-98f1-8cdbbbff15c3.gif)
+https://user-images.githubusercontent.com/69093672/147513932-5601e2b2-b42d-433e-b2b5-6d6455bb785e.mp4
+
+
 
 
