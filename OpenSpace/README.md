@@ -1,7 +1,8 @@
 # fronted-development-projects-JetBrainAcademy
-# Flashcards
+# Open Space
 
 
-![st3](https://user-images.githubusercontent.com/69093672/147308329-29ae093e-33aa-442f-98f1-8cdbbbff15c3.gif)
+![st5](https://user-images.githubusercontent.com/69093672/148037248-d4bc42a7-36c3-4efa-9809-6eeb19934672.gif)
+
 
 
